@@ -1,0 +1,54 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Memory Profiler",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "-m",
+                "memory_profiler",
+                "scripts/memory_profile.py"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "clear-terminal",
+            "type": "shell",
+            "command": "clear",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "windows": {
+                "command": "cls"
+            }
+        },
+        {
+            "label": "stripe-listen",
+            "type": "shell",
+            "options": {
+                "shell": {
+                    "executable": "/bin/zsh",
+                    "args": [
+                        "-i",
+                        "-c"
+                    ]
+                }
+            },
+            "command": "source /Users/joey/.zshrc && stripe listen --forward-to 127.0.0.1:5001/accept-pay-as-you-go-user-stripe-webhook"
+            // "command": "source /Users/joey/.zshrc && /opt/homebrew/Cellar/stripe-cli/1.21.2/bin/stripe listen --forward-to localhost:5003/accept-pay-as-you-go-user-stripe-webhook"
+        },
+        {
+            "label": "echo",
+            "type": "shell",
+            "command": "echo Hello"
+        }
+    ]
+}

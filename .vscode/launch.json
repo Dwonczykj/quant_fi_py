@@ -1,0 +1,274 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Launch App NGrok (Flask)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/app.py",
+            // "preLaunchTask": "stripe-listen",
+            // "args": [
+            //     "run",
+            //     "--no-debugger",
+            //     "--no-reload"
+            // ],
+            // "jinja": true,
+            "console": "integratedTerminal",
+            "envFile": "${workspaceFolder}/.env",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/:${workspaceFolder}/models/:${workspaceFolder}/firebase/:${workspaceFolder}/whatsapp/:${workspaceFolder}/twilio_helpers/:${workspaceFolder}/helpers/:${workspaceFolder}/testing/:${workspaceFolder}/testing/whatsapp/:${workspaceFolder}/testing/exceptions/:${workspaceFolder}/testing/twilio_helpers/:${workspaceFolder}/test/:",
+                "TESTING": "false",
+                "FIREBASE_ENVIRONMENT": "development",
+                "DEBUG": "true"
+            },
+            "cwd": "${workspaceFolder}",
+            "justMyCode": true
+        },
+        {
+            "name": "Run Memory Profiler",
+            "type": "node",
+            "request": "launch",
+            "program": "PYTHONPATH=${workspaceFolder}/:${workspaceFolder}/models/:${workspaceFolder}/firebase/:${workspaceFolder}/whatsapp/:${workspaceFolder}/twilio_helpers/:${workspaceFolder}/helpers/:${workspaceFolder}/testing/:${workspaceFolder}/testing/whatsapp/:${workspaceFolder}/testing/exceptions/:${workspaceFolder}/testing/twilio_helpers/:${workspaceFolder}/test/ DEBUG=true MEMORY_PROFILE=true ${workspaceFolder}/scripts/memory_profile.py",
+            "preLaunchTask": "Run Memory Profiler",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "envFile": "${workspaceFolder}/.env",
+            // "env": {
+            //     "PYTHONPATH": "${workspaceFolder}/:${workspaceFolder}/models/:${workspaceFolder}/contracts/:${workspaceFolder}/helpers/:${workspaceFolder}/services/:${workspaceFolder}/test/:",
+            // },
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: Pytest [Current]",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                "${file}",
+                "-x", // Add this line to exit on first failure
+                // "-v",
+                // "-k EXPRESSION"
+                "--tb=short",
+                "--maxfail=1",
+                "--disable-warnings",
+                "--disable-pytest-warnings",
+                "--verbosity=0",
+                "--last-failed",
+            ],
+            // "preLaunchTask": "clear-terminal",
+            "cwd": "${workspaceFolder}",
+            "envFile": "${workspaceFolder}/.env",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/:${workspaceFolder}/models/:${workspaceFolder}/firebase/:${workspaceFolder}/whatsapp/:${workspaceFolder}/twilio_helpers/:${workspaceFolder}/:${workspaceFolder}/testing/:${workspaceFolder}/testing/whatsapp/:${workspaceFolder}/testing/exceptions/:${workspaceFolder}/testing/twilio_helpers/:${workspaceFolder}/test/:",
+                "FIREBASE_ENVIRONMENT": "test",
+                "TESTING": "true"
+            },
+            "console": "integratedTerminal",
+            "presentation": {
+                "clear": true,
+                "group": "test",
+                "reveal": "always",
+                "focus": true
+            }
+        },
+        {
+            "name": "Python: Pytest [test_ai_service.py]",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                "tests/test_ai_service.py",
+                "-x", // Add this line to exit on first failure
+                // "-v",
+                // "-k EXPRESSION"
+                "--tb=short",
+                "--maxfail=1",
+                "--disable-warnings",
+                "--disable-pytest-warnings",
+                "--verbosity=0",
+                "--last-failed",
+            ],
+            // "preLaunchTask": "clear-terminal",
+            "cwd": "${workspaceFolder}",
+            "envFile": "${workspaceFolder}/.env",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/:${workspaceFolder}/models/:${workspaceFolder}/firebase/:${workspaceFolder}/whatsapp/:${workspaceFolder}/twilio_helpers/:${workspaceFolder}/:${workspaceFolder}/testing/:${workspaceFolder}/testing/whatsapp/:${workspaceFolder}/testing/exceptions/:${workspaceFolder}/testing/twilio_helpers/:${workspaceFolder}/test/:",
+                "FIREBASE_ENVIRONMENT": "test",
+                "TESTING": "true"
+            },
+            "console": "integratedTerminal",
+            "presentation": {
+                "clear": true,
+                "group": "test",
+                "reveal": "always",
+                "focus": true
+            }
+        },
+        {
+            "name": "Python: Pytest (Skip Expensive Tests) [Current]",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                "${file}",
+                "-m",
+                "-x", // Add this line to exit on first failure
+                // "-v",
+                // "-k EXPRESSION"
+                "--tb=short",
+                "--maxfail=1",
+                "--disable-warnings",
+                "--disable-pytest-warnings",
+                "--verbosity=0",
+                "--last-failed",
+            ],
+            // "preLaunchTask": "clear-terminal",
+            "cwd": "${workspaceFolder}",
+            "envFile": "${workspaceFolder}/.env",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/:${workspaceFolder}/models/:${workspaceFolder}/firebase/:${workspaceFolder}/whatsapp/:${workspaceFolder}/twilio_helpers/:${workspaceFolder}/:${workspaceFolder}/testing/:${workspaceFolder}/testing/whatsapp/:${workspaceFolder}/testing/exceptions/:${workspaceFolder}/testing/twilio_helpers/:${workspaceFolder}/test/:",
+                "FIREBASE_ENVIRONMENT": "test",
+                "TESTING": "true"
+            },
+            "console": "integratedTerminal",
+            "presentation": {
+                "clear": true,
+                "group": "test",
+                "reveal": "always",
+                "focus": true
+            }
+        },
+        {
+            "name": "Python: Pytest [test_firebase_methods.py]",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                "tests/test_firebase_methods.py",
+                "-x", // Add this line to exit on first failure
+                // "-v",
+            ],
+            // "preLaunchTask": "clear-terminal",
+            "cwd": "${workspaceFolder}",
+            "envFile": "${workspaceFolder}/.env",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/:${workspaceFolder}/models/:${workspaceFolder}/firebase/:${workspaceFolder}/whatsapp/:${workspaceFolder}/twilio_helpers/:${workspaceFolder}/:${workspaceFolder}/testing/:${workspaceFolder}/testing/whatsapp/:${workspaceFolder}/testing/exceptions/:${workspaceFolder}/testing/twilio_helpers/:${workspaceFolder}/test/:",
+                "FIREBASE_ENVIRONMENT": "test",
+                "TESTING": "true"
+            },
+            "console": "integratedTerminal",
+            "consoleName": "Python Debug Console",
+            "presentation": {
+                "clear": true,
+                "group": "test",
+                "reveal": "always",
+                "focus": true
+            },
+        },
+        {
+            "name": "Python: Pytest [Current] --reverse",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                "${file}",
+                "-x", // Add this line to exit on first failure
+                "-v",
+                "--reverse"
+            ],
+            "cwd": "${workspaceFolder}",
+            "envFile": "${workspaceFolder}/.env",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/:${workspaceFolder}/models/:${workspaceFolder}/firebase/:${workspaceFolder}/whatsapp/:${workspaceFolder}/twilio_helpers/:${workspaceFolder}/:${workspaceFolder}/testing/:${workspaceFolder}/testing/whatsapp/:${workspaceFolder}/testing/exceptions/:${workspaceFolder}/testing/twilio_helpers/:${workspaceFolder}/test/:",
+                "FIREBASE_ENVIRONMENT": "test",
+                "TESTING": "true"
+            },
+            "console": "integratedTerminal",
+            "presentation": {
+                "clear": true,
+                "group": "test",
+                "reveal": "always",
+                "focus": true
+            }
+        },
+        {
+            "name": "Python: Pytest -vv [Current]",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                "${file}",
+                "-x", // Add this line to exit on first failure
+                "-vv",
+                "--tb=long",
+            ],
+            "cwd": "${workspaceFolder}",
+            "envFile": "${workspaceFolder}/.env",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/:${workspaceFolder}/models/:${workspaceFolder}/firebase/:${workspaceFolder}/whatsapp/:${workspaceFolder}/twilio_helpers/:${workspaceFolder}/:${workspaceFolder}/testing/:${workspaceFolder}/testing/whatsapp/:${workspaceFolder}/testing/exceptions/:${workspaceFolder}/testing/twilio_helpers/:${workspaceFolder}/test/:",
+                "FIREBASE_ENVIRONMENT": "test",
+                "TESTING": "true"
+            },
+            "console": "integratedTerminal",
+            "presentation": {
+                "clear": true,
+                "group": "test",
+                "reveal": "always",
+                "focus": true
+            }
+        },
+        {
+            "name": "Python: Unittest [Discover]",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "unittest",
+            "args": [
+                "discover",
+                "-s",
+                "testing",
+                "-p",
+                "*.py"
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "presentation": {
+                "clear": true,
+                "group": "test",
+                "reveal": "always",
+                "focus": true
+            }
+        },
+        {
+            "name": "Python: Flask",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "flask",
+            "env": {
+                "FLASK_APP": "app.py",
+                "FLASK_ENV": "development",
+                "FLASK_DEBUG": "1",
+                "FIREBASE_ENVIRONMENT": "test",
+                "TESTING": "true"
+            },
+            "args": [
+                "run",
+                "--no-debugger",
+                "--no-reload"
+            ],
+            "jinja": true,
+            "console": "integratedTerminal",
+            "presentation": {
+                "clear": true,
+                "group": "test",
+                "reveal": "always",
+                "focus": true
+            }
+        }
+    ]
+}
