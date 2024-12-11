@@ -3,3 +3,4 @@ quant_fi_py_venv
 .env
 
 .DS_Store
+gitleaks-report.txt
