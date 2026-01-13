@@ -13,7 +13,7 @@ cycler==0.12.1
 dataclasses-json==0.6.7
 defusedxml==0.7.1
 distro==1.9.0
-fonttools==4.55.1
+fonttools==4.61.0
 frozendict==2.4.6
 frozenlist==1.5.0
 h11==0.14.0
